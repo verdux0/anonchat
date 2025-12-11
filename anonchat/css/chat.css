@@ -1,0 +1,224 @@
+:root {
+  --chat-bg: #ffffff;
+  --chat-panel: #f8f9fa;
+  --chat-border: #e5e7eb;
+  --bubble-user: #e8f0fe;
+  --bubble-admin: #ffe4e6;
+  --bubble-anon: #f3f4f6;
+  --user-color: #1a73e8;
+  --admin-color: #ea4335;
+  --anon-color: #374151;
+}
+
+/* Layout */
+.chat-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .chat-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar */
+.chat-sidebar {
+  background: var(--bg-card-2, #f8f9fa);
+  border: 1px solid var(--border, #dadce0);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.chat-meta {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted, #5f6368);
+}
+
+.chat-meta .meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.chat-status .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-active { background: #34a853; }
+.dot-pending { background: #fbbc04; }
+.dot-closed { background: #ea4335; }
+.dot-waiting { background: #1a73e8; }
+.dot-archived { background: #9ca3af; }
+
+/* Conversation header */
+.chat-header {
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #dadce0);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.chat-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-title h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text, #202124);
+}
+
+.chat-code {
+  font-size: 12px;
+  color: var(--muted, #5f6368);
+}
+
+/* Messages panel */
+.chat-panel {
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #dadce0);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 70vh;
+  min-height: 480px;
+}
+
+.chat-messages {
+  padding: 16px;
+  overflow-y: auto;
+  background: var(--chat-panel);
+  border-top: 1px solid var(--chat-border);
+  border-bottom: 1px solid var(--chat-border);
+  display: grid;
+  gap: 10px;
+}
+
+/* Message bubble styles */
+.message {
+  max-width: 72%;
+  display: grid;
+  gap: 6px;
+}
+
+.message .meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted, #5f6368);
+}
+
+.message .bubble {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border, #dadce0);
+  background: var(--bubble-anon);
+  color: var(--text, #202124);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.message .file {
+  font-size: 12px;
+  color: var(--muted, #5f6368);
+}
+
+.message.user .bubble {
+  background: var(--bubble-user);
+  border-color: #d2e3fc;
+  color: var(--user-color);
+}
+
+.message.admin .bubble {
+  background: var(--bubble-admin);
+  border-color: #ffd5d9;
+  color: var(--admin-color);
+}
+
+.message.anonymous .bubble {
+  background: var(--bubble-anon);
+  border-color: var(--chat-border);
+  color: var(--anon-color);
+}
+
+.message.user {
+  justify-self: end;
+  text-align: right;
+}
+
+.message.admin {
+  justify-self: start;
+}
+
+.message.anonymous {
+  justify-self: start;
+}
+
+/* Composer */
+.chat-composer {
+  padding: 12px;
+  background: #fff;
+  border-bottom-left-radius: var(--radius, 8px);
+  border-bottom-right-radius: var(--radius, 8px);
+  display: grid;
+  grid-template-columns: 1fr auto 120px;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .chat-composer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chat-composer textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+.sender-select {
+  display: grid;
+  gap: 6px;
+}
+
+/* Utility */
+.small {
+  font-size: 12px;
+  color: var(--muted, #5f6368);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Sticky actions */
+.sticky-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
