@@ -217,7 +217,7 @@ Obtiene todos los mensajes de una conversación autenticada.
 ![Creación de Conversación](['WhatsApp Image 2025-12-04 at 18.13.02 (copia 1).jpeg'])
 
 ### Máquina de Estados
-![Diagrama de Estados](['makinaEstados.jpeg'])
+![Diagrama de Estados](docs/img/maquinaEstados.jpg)
 
 ## 📁 Estructura del Proyecto
 
