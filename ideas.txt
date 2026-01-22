@@ -1,0 +1,6 @@
+añadir un boton de entrar al chat en el admin panel
+arreglar que los mensajes no se envien
+que el textarea no sea redimensionable
+suggestions deberian de estar en tooltips
+el chat deberia de tener scroll
+eliminar "por seguridad la contraseña debe tener 12 caracteres"
